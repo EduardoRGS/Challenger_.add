@@ -8,6 +8,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
+
 @Entity
 @Table(name = "turma")
 @Getter
@@ -18,7 +19,7 @@ public class Turma {
     @Id
     @Column(name = "id_turma")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idTurma;
+    private Long idTurma;
 
     @Column(name = "nome_turma")
     @NotNull

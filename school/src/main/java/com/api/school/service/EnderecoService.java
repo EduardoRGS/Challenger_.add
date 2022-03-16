@@ -30,13 +30,13 @@ public class EnderecoService {
 
     public ResponseEntity<Endereco> updateAndressById(Endereco endereco, Long id){
         return enderecoRepository.findById(id)
-                .map(andressupdate -> {
-                    andressupdate.setLograudouro(endereco.getLograudouro());
-                    andressupdate.setComplemento(endereco.getComplemento());
-                    andressupdate.setBairro(endereco.getBairro());
-                    andressupdate.setCidade(endereco.getCidade());
-                    andressupdate.setEstado(endereco.getEstado());
-                    Endereco update = enderecoRepository.save(andressupdate);
+                .map(andressUpdate -> {
+                    andressUpdate.setLograudouro(endereco.getLograudouro());
+                    andressUpdate.setComplemento(endereco.getComplemento());
+                    andressUpdate.setBairro(endereco.getBairro());
+                    andressUpdate.setCidade(endereco.getCidade());
+                    andressUpdate.setEstado(endereco.getEstado());
+                    Endereco update = enderecoRepository.save(andressUpdate);
                     return ResponseEntity.ok().body(update);
                 }).orElse(ResponseEntity.notFound().build());
     }

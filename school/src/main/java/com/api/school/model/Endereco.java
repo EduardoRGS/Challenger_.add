@@ -19,11 +19,11 @@ public class Endereco {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idEndereco;
 
-    @Column(name = "locadouro")
-    private String locadouro;
+    @Column(name = "lograudouro")
+    private String lograudouro;
 
     @Column(name = "complemento")
-    private String compelmento;
+    private String complemento;
 
     @Column(name = "bairoo")
     private String bairro;

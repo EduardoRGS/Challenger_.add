@@ -23,7 +23,7 @@ public class Escola {
     private String nome;
 
     @OneToOne
-    @Column(name = "endereco_escola")
+    @JoinColumn(name = "id_endereco")
     private Endereco endereco;
 
     @OneToMany

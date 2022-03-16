@@ -5,6 +5,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Entity
@@ -20,8 +21,10 @@ public class Turma {
     private int idTurma;
 
     @Column(name = "nome_turma")
+    @NotNull
     private String nome;
 
     @Column(name = "capacidade_turma")
+    @NotNull
     private int capacidade;
 }

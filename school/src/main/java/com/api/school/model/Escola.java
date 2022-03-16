@@ -22,6 +22,11 @@ public class Escola {
     @Column(name = "nome_escola")
     private String nome;
 
+    @OneToOne
+    @Column(name = "endereco_escola")
+    private Endereco endereco;
+
     @OneToMany
+    @JoinColumn(name = "id_turma")
     private List<Turma> turma;
 }

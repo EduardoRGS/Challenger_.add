@@ -27,5 +27,10 @@ public class Aluno {
     private LocalDateTime dataDeNascimento;
 
     @ManyToOne
+    @JoinColumn(name = "id_turma")
     private Turma turma;
+
+    @OneToOne
+    @JoinColumn(name = "id_escola")
+    private Escola escola;
 }

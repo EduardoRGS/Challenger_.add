@@ -15,7 +15,7 @@ import javax.validation.constraints.Size;
 public class Endereco {
 
     @Id
-    @Column(name = "id_enndereco")
+    @Column(name = "id_endereco")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idEndereco;
 

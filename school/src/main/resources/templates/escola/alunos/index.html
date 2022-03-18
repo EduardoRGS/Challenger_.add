@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8" />
+    <title>Cadastrar Aluno</title>
+
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+          crossorigin="anonymous">
+
+</head>
+<body>
+
+<div class="container my-2">
+    <a th:href="@{/escola/alunos/novo}" class="btn btn-primary btn-sm mb-3">Incluir Aluno</a>
+    <h1>Alunos</h1>
+    <table border="1" class="table table-dark">
+        <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Data De Nascimento</th>
+            <th>Escola</th>
+            <th>Turma</th>
+            <th>Ações</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="aluno : ${listaAlunos}">
+            <td th:text="${aluno.nome}"></td>
+            <td th:text="${aluno.dataDeNascimento}"></td>
+            <td th:text="${aluno.escola}"></td>
+            <td th:text="${aluno.turma}"></td>
+        </tr>
+
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8" />
+    <title>Lista de Alunos</title>
+
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+          crossorigin="anonymous">
+
+</head>
+<body>
+
+<div class="container my-2">
+    <h2>Novo Aluno</h2>
+    <form action="#" th:action="@{/escola/alunos/salvar}" th:object="${aluno}" method="post">
+
+       <label for="nome">Nome</label>
+        <input type="text" th:field="*{{nome}}" id="nome" placeholder="Nome">
+        <span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
+
+        <label for="dataDeNascimento">Data de Nascimento</label>
+        <input type="text" th:field="*{{dataDeNascimento}}" id="dataDeNascimento" placeholder="Nome">
+        <span th:if="${#fields.hasErrors('dataDeNascimento')}" th:errors="*{dataDeNascimento}"></span>
+
+        <label for="escola">Escola</label>
+        <input type="text" th:field="*{{escola}}" id="escola" placeholder="Nome">
+        <span th:if="${#fields.hasErrors('escola')}" th:errors="*{escola}"></span>
+
+        <label for="turma">Turma</label>
+        <input type="text" th:field="*{{turma}}" id="turma" placeholder="Nome">
+        <span th:if="${#fields.hasErrors('turma')}" th:errors="*{turma}"></span>
+
+        <button type="submit" class="btn btn-info col-2">Salvar</button>
+    </form>
+    <hr>
+    <a th:href="@{/escola/alunos}">Retornar para a lista de alunos</a>
+</div>
+</body>
+</html>

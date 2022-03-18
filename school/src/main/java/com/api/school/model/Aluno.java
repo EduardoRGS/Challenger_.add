@@ -3,8 +3,10 @@ package com.api.school.model;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -24,7 +26,8 @@ public class Aluno {
     private String nome;
 
     @Column(name = "dataDeNascimento")
-    private LocalDateTime dataDeNascimento;
+    @DateTimeFormat(pattern="dd/MM/yyyy")
+    private LocalDate dataDeNascimento;
 
     @ManyToOne
     @JoinColumn(name = "id_turma")

@@ -6,6 +6,7 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "escola")
@@ -26,7 +27,8 @@ public class Escola {
     @JoinColumn(name = "id_endereco")
     private Endereco endereco;
 
-    @OneToMany
-    @JoinColumn(name = "id_turma")
-    private List<Turma> turma;
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_escola", referencedColumnName = "id_escola")
+    public List<Turma> turmas;
+
 }

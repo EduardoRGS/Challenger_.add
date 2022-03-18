@@ -34,7 +34,7 @@ public class EscolaService {
                 .map(schoolUpdate -> {
                     schoolUpdate.setNome(escola.getNome());
                     schoolUpdate.setEndereco(escola.getEndereco());
-                    schoolUpdate.setTurma(escola.getTurma());
+                    schoolUpdate.setTurmas(escola.getTurmas());
                     Escola update = escolaRepository.save(schoolUpdate);
                     return ResponseEntity.ok().body(update);
                 }).orElse(ResponseEntity.notFound().build());

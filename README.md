@@ -1,5 +1,5 @@
 # Challenger_.add
-CRUD de um Aplicação de gerenciamento escolar
+CRUD de uma Aplicação de gerenciamento escolar
 
 ## ✔️ Tecnologias utilizadas:
 -``Java 11``
